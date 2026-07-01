@@ -5,11 +5,22 @@ from typing import Any
 
 class Game:
     def __init__(self):
-        pass
+        self._question = ""
+
+    @property
+    def question(self) -> str:
+        raise AttributeError("읽을 수 없는 속성")
+
+    @question.setter
+    def question(self, value):
+        self._question = value
 
     def guess(self, guess_number) -> GameResult:
         self.assert_illegal_value(guess_number)
-        return GameResult(True, 3, 0)
+        if guess_number == self._question:
+            return GameResult(True, 3, 0)
+
+        return None
 
     def assert_illegal_value(self, guess_number: {__len__, __iter__, __getitem__} | None):
         if guess_number is None:
