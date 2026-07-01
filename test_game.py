@@ -1,5 +1,6 @@
 import pytest
 from game import Game
+from game_result import GameResult
 
 @pytest.fixture
 def game():
