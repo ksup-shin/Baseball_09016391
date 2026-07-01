@@ -6,3 +6,6 @@ class Game:
         if guessNumber is None:
             raise TypeError()
 
+        if len(guessNumber) != 3:
+            raise TypeError()
+
