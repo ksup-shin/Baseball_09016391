@@ -20,7 +20,7 @@ class Game:
         if guess_number == self._question:
             return GameResult(True, 3, 0)
 
-        return None
+        return GameResult(False, 0, 0)
 
     def assert_illegal_value(self, guess_number: {__len__, __iter__, __getitem__} | None):
         if guess_number is None:
